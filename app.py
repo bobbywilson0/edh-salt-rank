@@ -27,7 +27,7 @@ def update_graph(value):
     if value == 'Add cards here to filter the graph' or value == '':
         updated_df = filtered_df
     else:
-        cleaned_values = [re.sub(r'^\d+$', '', name.strip()) for name in value.split('\n')]
+        cleaned_values = [re.sub(r'^\d+', '', name.strip()) for name in value.split('\n')]
         updated_df = filtered_df[filtered_df['name'].isin(cleaned_values)]
     fig = px.scatter(updated_df, x='edhrecRank', y='edhrecSaltiness', title="Saltiness Vs EDHREC Rank", color_continuous_scale='portland', hover_name='name', color='edhrecSaltiness')
     fig.update_layout(xaxis=dict(autorange='reversed'))
