@@ -6,6 +6,8 @@ df = pd.read_json('./vis.json')
 filtered_df = df[(df['edhrecRank'] <= 10000)]
 
 app = Dash()
+server = app.server
+
 
 app.layout = [
     dcc.Graph(id='graph-content'),
