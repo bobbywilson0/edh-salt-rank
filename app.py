@@ -1,3 +1,4 @@
+import re
 from dash import Dash, html, dcc, callback, Output, Input, ClientsideFunction
 import plotly.express as px
 import pandas as pd
